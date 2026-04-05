@@ -1,0 +1,17 @@
+# Requirements for RupiahGuard
+
+- Node.js (v18 or later recommended)
+- pnpm (v8 or later recommended)
+- Next.js (custom agent version, see AGENTS.md)
+- TypeScript
+- React
+- Tailwind CSS
+- PostCSS
+- ESLint
+
+## Setup
+
+1. Install dependencies:
+   pnpm install
+2. Start development server:
+   pnpm dev
