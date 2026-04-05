@@ -91,9 +91,10 @@ export default function AlertDetailModal({
           </div>
           <button
             onClick={onClose}
-            className="cursor-pointer rounded-md p-1 text-slate-500 transition-colors hover:text-white"
+            aria-label="Tutup detail alert"
+            className="cursor-pointer rounded-md p-1 text-slate-500 transition-colors duration-200 hover:text-white"
           >
-            <X className="h-5 w-5" />
+            <X className="h-5 w-5" aria-hidden="true" />
           </button>
         </div>
 

@@ -37,7 +37,7 @@ export default function ProvinceRanking({ provinces }: ProvinceRankingProps) {
       </h3>
       <div className="space-y-3">
         {ranked.map((p, i) => (
-          <div key={p.id} className="flex items-center gap-3">
+          <div key={p.id} className="flex items-center gap-3 rounded-lg px-1 py-0.5 transition-colors duration-200 hover:bg-slate-800/50">
             <span className="w-5 shrink-0 text-xs font-medium text-slate-500">
               {i + 1}
             </span>

@@ -21,7 +21,7 @@ export default function MetricCard({
   const TrendIcon = trend === "up" ? TrendingUp : TrendingDown;
 
   return (
-    <div className="rounded-xl border border-slate-700 bg-slate-800/50 p-5">
+    <div className="rounded-xl border border-slate-700/50 bg-slate-800/50 p-5 transition-colors duration-200 hover:border-slate-600">
       <div
         className="mb-4 h-1 w-12 rounded-full"
         style={{ backgroundColor: accentColor }}
@@ -30,6 +30,7 @@ export default function MetricCard({
       <p className="mt-1 text-2xl font-bold text-white">{value}</p>
       <div className="mt-2 flex items-center gap-1.5">
         <TrendIcon
+          aria-hidden="true"
           className={clsx(
             "h-3.5 w-3.5",
             trendColor === "green" ? "text-green-400" : "text-red-400"

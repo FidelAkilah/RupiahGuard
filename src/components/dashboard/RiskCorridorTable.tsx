@@ -34,7 +34,7 @@ export default function RiskCorridorTable() {
             {corridors.map((c) => (
               <tr
                 key={c.rank}
-                className="border-b border-slate-800 last:border-0"
+                className="border-b border-slate-800 transition-colors duration-200 last:border-0 hover:bg-slate-800/50"
               >
                 <td className="py-3 pr-4 text-slate-500">{c.rank}</td>
                 <td className="py-3 pr-4 text-slate-300">{c.route}</td>

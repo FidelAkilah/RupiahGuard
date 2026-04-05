@@ -17,6 +17,18 @@ body {
   font-family: var(--font-sans), system-ui, sans-serif;
 }
 
+/* Focus-visible ring for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid #0ea5e9;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
 /* Leaflet popup/tooltip dark overrides */
 .heatmap-tooltip .leaflet-tooltip {
   background: #1e293b;

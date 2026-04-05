@@ -25,9 +25,10 @@ export default function TopBar({ onMenuClick }: TopBarProps) {
       <div className="flex items-center gap-4">
         <button
           onClick={onMenuClick}
-          className="cursor-pointer rounded-md p-1.5 text-slate-400 hover:text-white lg:hidden"
+          aria-label="Buka menu navigasi"
+          className="cursor-pointer rounded-md p-1.5 text-slate-400 transition-colors duration-200 hover:text-white lg:hidden"
         >
-          <Menu className="h-5 w-5" />
+          <Menu className="h-5 w-5" aria-hidden="true" />
         </button>
 
         <nav className="flex items-center gap-1.5 text-sm">
@@ -47,14 +48,17 @@ export default function TopBar({ onMenuClick }: TopBarProps) {
           05 Apr 2026, 19:45:32 WIB
         </span>
 
-        <button className="relative cursor-pointer text-slate-400 transition-colors hover:text-white">
-          <Bell className="h-5 w-5" />
+        <button
+          aria-label="Notifikasi, 12 belum dibaca"
+          className="relative cursor-pointer text-slate-400 transition-colors duration-200 hover:text-white"
+        >
+          <Bell className="h-5 w-5" aria-hidden="true" />
           <span className="absolute -right-1.5 -top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-[10px] font-bold text-white">
             12
           </span>
         </button>
 
-        <div className="h-8 w-8 rounded-full bg-slate-700" />
+        <div className="h-8 w-8 rounded-full bg-slate-700" aria-label="Profil pengguna" role="img" />
       </div>
     </header>
   );

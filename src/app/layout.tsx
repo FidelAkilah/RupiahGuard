@@ -8,9 +8,23 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "RupiahGuard -- AI SupTech Dashboard",
+  title: {
+    default: "RupiahGuard -- AI SupTech Dashboard",
+    template: "%s | RupiahGuard",
+  },
   description:
     "Real-time macro-prudential surveillance for Indonesia's payment systems",
+  openGraph: {
+    title: "RupiahGuard -- AI SupTech Dashboard",
+    description:
+      "Real-time macro-prudential surveillance for Indonesia's payment systems",
+    type: "website",
+    locale: "id_ID",
+    siteName: "RupiahGuard",
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({

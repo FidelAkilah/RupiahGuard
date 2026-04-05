@@ -12,6 +12,7 @@ import clsx from "clsx";
 import { MOCK_ALERTS, type AlertDetail } from "@/lib/mock-alerts";
 import AlertCard from "@/components/dashboard/AlertCard";
 import AlertDetailModal from "@/components/dashboard/AlertDetailModal";
+import AlertToast from "@/components/dashboard/AlertToast";
 
 type Severity = "all" | "critical" | "high" | "medium" | "low";
 type Status = "all" | "active" | "investigating" | "resolved";
@@ -180,7 +181,8 @@ export default function AlertsPage() {
         <select
           value={sortBy}
           onChange={(e) => setSortBy(e.target.value as SortBy)}
-          className="cursor-pointer rounded-lg border border-slate-700 bg-slate-800 px-3 py-1.5 text-xs text-slate-300 outline-none transition-colors focus:border-cyan-500"
+          aria-label="Urutkan berdasarkan"
+          className="cursor-pointer rounded-lg border border-slate-700 bg-slate-800 px-3 py-1.5 text-xs text-slate-300 outline-none transition-colors duration-200 focus:border-cyan-500"
         >
           {sortOptions.map((s) => (
             <option key={s.value} value={s.value}>
@@ -223,6 +225,9 @@ export default function AlertsPage() {
           onClose={() => setSelectedAlert(null)}
         />
       )}
+
+      {/* Live toast notifications */}
+      <AlertToast />
     </div>
   );
 }

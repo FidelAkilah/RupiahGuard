@@ -45,7 +45,7 @@ export default function RecentAlerts() {
       <h3 className="mb-4 text-sm font-semibold text-white">Alert Terbaru</h3>
       <ul className="space-y-3">
         {alerts.map((alert) => (
-          <li key={alert.id} className="flex gap-3">
+          <li key={alert.id} className="flex gap-3 rounded-lg px-1 py-0.5 transition-colors duration-200 hover:bg-slate-800/50">
             <span
               className={clsx(
                 "mt-1.5 h-2 w-2 shrink-0 rounded-full",

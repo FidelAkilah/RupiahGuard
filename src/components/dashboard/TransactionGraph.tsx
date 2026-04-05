@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useMemo } from "react";
 import { AlertTriangle, X } from "lucide-react";
 import clsx from "clsx";
 import {
@@ -58,7 +58,10 @@ export default function TransactionGraph({ filter }: TransactionGraphProps) {
 
   const filteredNodes = GRAPH_NODES.filter((n) => visibleNodeIds.has(n.id));
 
-  const nodeMap = new Map(GRAPH_NODES.map((n) => [n.id, n]));
+  const nodeMap = useMemo(
+    () => new Map(GRAPH_NODES.map((n) => [n.id, n])),
+    []
+  );
 
   const connectedEdges = hoveredNode
     ? new Set(

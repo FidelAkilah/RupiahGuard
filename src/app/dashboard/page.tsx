@@ -1,45 +1,50 @@
+"use client";
+
 import MetricCard from "@/components/dashboard/MetricCard";
 import TransactionChart from "@/components/dashboard/TransactionChart";
 import RiskCorridorTable from "@/components/dashboard/RiskCorridorTable";
 import DistributionChart from "@/components/dashboard/DistributionChart";
 import RecentAlerts from "@/components/dashboard/RecentAlerts";
-
-const metrics = [
-  {
-    label: "Total Transaksi (24h)",
-    value: "4.2M",
-    change: "+12.3%",
-    trend: "up" as const,
-    trendColor: "green" as const,
-    accentColor: "#06b6d4",
-  },
-  {
-    label: "Risk Score Nasional",
-    value: "34/100",
-    change: "-2.1",
-    trend: "down" as const,
-    trendColor: "green" as const,
-    accentColor: "#10b981",
-  },
-  {
-    label: "Anomali Aktif",
-    value: "12",
-    change: "+3",
-    trend: "up" as const,
-    trendColor: "red" as const,
-    accentColor: "#ef4444",
-  },
-  {
-    label: "Velocity of Money",
-    value: "2.8x",
-    change: "+0.3",
-    trend: "up" as const,
-    trendColor: "green" as const,
-    accentColor: "#f59e0b",
-  },
-];
+import { useLiveMetrics } from "@/hooks/useLiveMetrics";
 
 export default function DashboardOverview() {
+  const live = useLiveMetrics();
+
+  const metrics = [
+    {
+      label: "Total Transaksi (24h)",
+      value: live.totalTransaksiFormatted,
+      change: live.totalChange,
+      trend: "up" as const,
+      trendColor: "green" as const,
+      accentColor: "#06b6d4",
+    },
+    {
+      label: "Risk Score Nasional",
+      value: "34/100",
+      change: "-2.1",
+      trend: "down" as const,
+      trendColor: "green" as const,
+      accentColor: "#10b981",
+    },
+    {
+      label: "Anomali Aktif",
+      value: String(live.anomaliAktif),
+      change: live.anomaliChange,
+      trend: live.anomaliTrend,
+      trendColor: live.anomaliTrendColor,
+      accentColor: "#ef4444",
+    },
+    {
+      label: "Velocity of Money",
+      value: "2.8x",
+      change: "+0.3",
+      trend: "up" as const,
+      trendColor: "green" as const,
+      accentColor: "#f59e0b",
+    },
+  ];
+
   return (
     <div className="space-y-6">
       {/* Metric cards */}

@@ -16,6 +16,7 @@ export default function HeroSection() {
     <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-slate-950 via-slate-950 to-slate-900 px-6">
       {/* Dot grid background */}
       <div
+        aria-hidden="true"
         className="pointer-events-none absolute inset-0 opacity-[0.03]"
         style={{
           backgroundImage:
@@ -25,7 +26,7 @@ export default function HeroSection() {
       />
 
       {/* Subtle radial glow */}
-      <div className="pointer-events-none absolute left-1/2 top-1/3 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-500/5 blur-[120px]" />
+      <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-1/3 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-500/5 blur-[120px]" />
 
       <div className="relative z-10 mx-auto max-w-4xl text-center">
         <motion.div
@@ -86,7 +87,7 @@ export default function HeroSection() {
               key={stat.label}
               className="flex items-center gap-3 text-sm text-slate-400"
             >
-              <stat.icon className="h-4 w-4 shrink-0 text-cyan-500" />
+              <stat.icon className="h-4 w-4 shrink-0 text-cyan-500" aria-hidden="true" />
               <span>{stat.label}</span>
             </div>
           ))}

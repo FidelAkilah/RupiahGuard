@@ -74,7 +74,8 @@ export default function HeatmapPage() {
         <select
           value={riskFilter}
           onChange={(e) => setRiskFilter(e.target.value)}
-          className="cursor-pointer rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-slate-300 outline-none transition-colors focus:border-cyan-500"
+          aria-label="Filter berdasarkan tingkat risiko"
+          className="cursor-pointer rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-slate-300 outline-none transition-colors duration-200 focus:border-cyan-500"
         >
           {riskLevels.map((r) => (
             <option key={r.value} value={r.value}>
@@ -86,7 +87,8 @@ export default function HeatmapPage() {
         <select
           value={_paymentFilter}
           onChange={(e) => setPaymentFilter(e.target.value)}
-          className="cursor-pointer rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-slate-300 outline-none transition-colors focus:border-cyan-500"
+          aria-label="Filter berdasarkan jenis pembayaran"
+          className="cursor-pointer rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-slate-300 outline-none transition-colors duration-200 focus:border-cyan-500"
         >
           {paymentTypes.map((p) => (
             <option key={p.value} value={p.value}>

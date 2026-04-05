@@ -53,9 +53,10 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
           </Link>
           <button
             onClick={onClose}
-            className="cursor-pointer rounded-md p-1 text-slate-400 hover:text-white lg:hidden"
+            aria-label="Tutup menu navigasi"
+            className="cursor-pointer rounded-md p-1 text-slate-400 transition-colors duration-200 hover:text-white lg:hidden"
           >
-            <X className="h-5 w-5" />
+            <X className="h-5 w-5" aria-hidden="true" />
           </button>
         </div>
 
@@ -72,14 +73,15 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
                 key={item.href}
                 href={item.href}
                 onClick={onClose}
+                aria-current={isActive ? "page" : undefined}
                 className={clsx(
-                  "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors duration-150",
+                  "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors duration-200",
                   isActive
                     ? "border-l-2 border-cyan-400 bg-cyan-500/10 text-cyan-400"
                     : "text-slate-400 hover:bg-slate-800/60 hover:text-white"
                 )}
               >
-                <item.icon className="h-4.5 w-4.5 shrink-0" />
+                <item.icon className="h-4.5 w-4.5 shrink-0" aria-hidden="true" />
                 {item.label}
               </Link>
             );
